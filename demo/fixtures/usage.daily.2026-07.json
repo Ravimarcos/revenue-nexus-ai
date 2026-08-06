@@ -1,0 +1,166 @@
+{
+  "_source": "Channel Rewards — production telemetry",
+  "_metric": "reward_transactions",
+  "_contractId": "CON-2026-114",
+  "_period": "2026-07",
+  "_granularity": "DAILY",
+  "_note": "Daily granularity is a hard requirement (FR-4.1). A monthly aggregate cannot be rated across a mid-cycle amendment — the information about which side of the 16 Jul boundary each call fell on would be destroyed at aggregation.",
+  "_totalCalls": 2400000,
+  "days": [
+    {
+      "date": "2026-07-01",
+      "weekday": "Wed",
+      "calls": 86111
+    },
+    {
+      "date": "2026-07-02",
+      "weekday": "Thu",
+      "calls": 82958
+    },
+    {
+      "date": "2026-07-03",
+      "weekday": "Fri",
+      "calls": 95476
+    },
+    {
+      "date": "2026-07-04",
+      "weekday": "Sat",
+      "calls": 38775
+    },
+    {
+      "date": "2026-07-05",
+      "weekday": "Sun",
+      "calls": 42551
+    },
+    {
+      "date": "2026-07-06",
+      "weekday": "Mon",
+      "calls": 84185
+    },
+    {
+      "date": "2026-07-07",
+      "weekday": "Tue",
+      "calls": 102415
+    },
+    {
+      "date": "2026-07-08",
+      "weekday": "Wed",
+      "calls": 95670
+    },
+    {
+      "date": "2026-07-09",
+      "weekday": "Thu",
+      "calls": 87284
+    },
+    {
+      "date": "2026-07-10",
+      "weekday": "Fri",
+      "calls": 82204
+    },
+    {
+      "date": "2026-07-11",
+      "weekday": "Sat",
+      "calls": 44663
+    },
+    {
+      "date": "2026-07-12",
+      "weekday": "Sun",
+      "calls": 45263
+    },
+    {
+      "date": "2026-07-13",
+      "weekday": "Mon",
+      "calls": 88245
+    },
+    {
+      "date": "2026-07-14",
+      "weekday": "Tue",
+      "calls": 83144
+    },
+    {
+      "date": "2026-07-15",
+      "weekday": "Wed",
+      "calls": 102346
+    },
+    {
+      "date": "2026-07-16",
+      "weekday": "Thu",
+      "calls": 94973
+    },
+    {
+      "date": "2026-07-17",
+      "weekday": "Fri",
+      "calls": 85979
+    },
+    {
+      "date": "2026-07-18",
+      "weekday": "Sat",
+      "calls": 35392
+    },
+    {
+      "date": "2026-07-19",
+      "weekday": "Sun",
+      "calls": 41400
+    },
+    {
+      "date": "2026-07-20",
+      "weekday": "Mon",
+      "calls": 96562
+    },
+    {
+      "date": "2026-07-21",
+      "weekday": "Tue",
+      "calls": 82625
+    },
+    {
+      "date": "2026-07-22",
+      "weekday": "Wed",
+      "calls": 84044
+    },
+    {
+      "date": "2026-07-23",
+      "weekday": "Thu",
+      "calls": 94443
+    },
+    {
+      "date": "2026-07-24",
+      "weekday": "Fri",
+      "calls": 91963
+    },
+    {
+      "date": "2026-07-25",
+      "weekday": "Sat",
+      "calls": 42948
+    },
+    {
+      "date": "2026-07-26",
+      "weekday": "Sun",
+      "calls": 40184
+    },
+    {
+      "date": "2026-07-27",
+      "weekday": "Mon",
+      "calls": 81157
+    },
+    {
+      "date": "2026-07-28",
+      "weekday": "Tue",
+      "calls": 96147
+    },
+    {
+      "date": "2026-07-29",
+      "weekday": "Wed",
+      "calls": 93214
+    },
+    {
+      "date": "2026-07-30",
+      "weekday": "Thu",
+      "calls": 94363
+    },
+    {
+      "date": "2026-07-31",
+      "weekday": "Fri",
+      "calls": 83316
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "_note": "Pre-computed and human-reviewed. Live generation runs only when ANTHROPIC_API_KEY is configured (app/api/explain/route.ts). The demo never depends on an API call — a link shared once and opened weeks later must not fail because of a rate limit or an expired key.",
+  "_discipline": "Every figure in these answers was produced by the pricing engine. The language model composed the sentences around them. It computed nothing.",
+  "answers": [
+    {
+      "id": "why-amount",
+      "question": "Why is this the recommended amount?",
+      "summary": "₹8,60,562.56 is the sum of two subscription segments, one usage segment with a chargeable overage, and GST on both — with the implementation milestone deliberately excluded.",
+      "body": [
+        "The July billing period could not be rated as a single unit, because Amendment A1 took effect on 16 July and clause §4 states it does not operate retrospectively. The period was therefore split into two rating segments and each was rated independently.",
+        "**Subscription — ₹7,17,677.42.** The first fifteen days were rated under base terms: 500 active employees at ₹1,200 each, no discount, prorated to 15 of 31 days, giving ₹2,90,322.58. The remaining sixteen days were rated under A1: 750 employees at ₹1,200 less the 8% volume discount, prorated to 16 of 31 days, giving ₹4,27,354.84.",
+        "**Channel Rewards usage — ₹11,612.88.** The included allowance was prorated per segment, not applied whole. Segment one carried a prorated entitlement of 9,67,742 transactions against 11,61,290 metered, leaving 1,93,548 chargeable. Because clause 3.4 determines the tier by total volume consumed, those transactions priced in the ₹0.06 band. Segment two consumed 12,38,710 transactions against a prorated entitlement of 15,48,387 and so fell entirely within allowance.",
+        "**Tax — ₹1,31,272.26.** Place of supply is Karnataka and the supplier is in Karnataka, making this an intra-state supply. CGST and SGST were applied at 9% each and rounded separately, since they are distinct heads on the GST return.",
+        "**What this avoided.** A system that rated the period as one unit under the amended terms would have produced ₹9,77,040 — overstating subscription by 15.4% while understating usage to zero. Two errors in opposite directions, partially masking each other, for a net error of ₹1,16,477.44."
+      ],
+      "sources": [
+        {
+          "label": "Clause 3.1 as amended by A1 §2",
+          "ref": "contract"
+        },
+        {
+          "label": "Clause 3.4 as amended by A1 §3",
+          "ref": "contract"
+        },
+        {
+          "label": "Amendment A1 §4 — no retrospective effect",
+          "ref": "amendment"
+        },
+        {
+          "label": "Daily usage records, 31 days",
+          "ref": "usage"
+        }
+      ]
+    },
+    {
+      "id": "why-held",
+      "question": "Why is the milestone held?",
+      "summary": "₹12,00,000 is withheld because the contractual acceptance window has not expired. It becomes billable on 13 August 2026.",
+      "body": [
+        "The UAT milestone was confirmed on 14 July 2026 and logged as CRM activity ACT-9337 by the key account manager. That is delivery evidence — it is not, by itself, billing eligibility.",
+        "Clause 4.2 requires a thirty-day acceptance window from the date of sign-off, during which the customer may raise written objections. That window expires on **13 August 2026**, thirteen days after this billing period closes.",
+        "`RULE-MILESTONE-007` therefore held the line rather than billing it. This is a recorded decision with a reason and a date attached, not an omission.",
+        "The distinction matters commercially in both directions. Billing inside the acceptance window risks a dispute and a credit note against an invoice that is already immutable. Never billing it at all is straightforward revenue leakage — and in the current-state workflow this line simply would not have appeared, so nobody would have known it was missing.",
+        "Note the shape of this run: the held amount, ₹12,00,000, is larger than the amount being billed. A blocking rule with a good reason is a feature, not a failure."
+      ],
+      "sources": [
+        {
+          "label": "Clause 4.2 — acceptance window",
+          "ref": "contract"
+        },
+        {
+          "label": "ACT-9337 — UAT sign-off confirmed 14 Jul 2026",
+          "ref": "activity"
+        },
+        {
+          "label": "RULE-MILESTONE-007 v1.0",
+          "ref": "rule"
+        }
+      ]
+    },
+    {
+      "id": "what-changed",
+      "question": "What changed after the amendment?",
+      "summary": "Amendment A1 changed three fields with effect from 16 July. Because it does not operate retrospectively, it created a segment boundary mid-period rather than repricing the whole month.",
+      "body": [
+        "**Active employees: 500 → 750.** Applied only from 16 July. The first fifteen days remain rated at 500 employees.",
+        "**Volume discount: none → 8%.** Same treatment — the discount applies to the second segment only. Applying it to the full month would have under-billed the first fifteen days.",
+        "**Included reward transactions: 20,00,000 → 30,00,000 per month.** This is the change most systems get wrong. The larger entitlement was purchased for sixteen days, so it prorates to 15,48,387 transactions for that segment. Applying the full 30,00,000 to the whole month would have shown zero overage and billed nothing for usage at all.",
+        "**Net effect on the July invoice.** The amendment increased the subscription charge for the second segment while simultaneously eliminating usage overage in that segment. Correctly segmented, the July recommendation is ₹8,60,562.56.",
+        "**One mechanical consequence.** The subscription line is billed monthly in advance, so July was already invoiced on 1 July under base terms. Because an issued invoice is immutable, settling this correctly requires a credit note against the original and a rebill at the segmented amount — not an edit to the existing invoice. Systems that silently update an issued invoice fail audit."
+      ],
+      "sources": [
+        {
+          "label": "Amendment A1 §2 — employee count and discount",
+          "ref": "amendment"
+        },
+        {
+          "label": "Amendment A1 §3 — transaction entitlement",
+          "ref": "amendment"
+        },
+        {
+          "label": "Amendment A1 §4 — no retrospective effect",
+          "ref": "amendment"
+        },
+        {
+          "label": "RULE-AMEND-002 v1.0",
+          "ref": "rule"
+        }
+      ]
+    }
+  ]
+}

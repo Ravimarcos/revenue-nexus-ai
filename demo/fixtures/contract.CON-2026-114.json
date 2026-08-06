@@ -1,0 +1,249 @@
+{
+  "contractId": "CON-2026-114",
+  "customerId": "hs-8841027",
+  "customerName": "Vantara Electricals Ltd",
+  "billingEntityId": "BE-VAN-KA",
+  "placeOfSupply": {
+    "state": "Karnataka",
+    "stateCode": "29"
+  },
+  "supplierState": "Karnataka",
+  "executedOn": "2026-03-28",
+  "termStart": "2026-04-01",
+  "termEnd": "2028-03-31",
+  "paymentTermsDays": 45,
+  "currency": "INR",
+  "versions": [
+    {
+      "versionId": "V0",
+      "label": "Base terms",
+      "validFrom": "2026-04-01",
+      "validTo": "2026-07-15",
+      "source": {
+        "document": "CON-2026-114.pdf",
+        "executedOn": "2026-03-28"
+      },
+      "lines": [
+        {
+          "lineNo": 1,
+          "productCode": "BENEFITS-WALLET",
+          "productName": "Benefits Wallet",
+          "strategy": "SUBSCRIPTION_PER_UNIT",
+          "clause": "3.1",
+          "billingFrequency": "MONTHLY_IN_ADVANCE",
+          "units": 500,
+          "unitLabel": "active employee",
+          "ratePerUnitPerMonth": "1200.00",
+          "discountRate": "0"
+        },
+        {
+          "lineNo": 2,
+          "productCode": "CHANNEL-REWARDS",
+          "productName": "Channel Rewards",
+          "strategy": "USAGE_TIERED",
+          "clause": "3.4",
+          "billingFrequency": "MONTHLY_IN_ARREARS",
+          "usageMetric": "reward_transactions",
+          "includedUnitsPerMonth": 2000000,
+          "tierInterpretation": "TOTAL_VOLUME",
+          "tiers": [
+            {
+              "upTo": 1000000,
+              "ratePerUnit": "0.08"
+            },
+            {
+              "upTo": 5000000,
+              "ratePerUnit": "0.06"
+            },
+            {
+              "upTo": null,
+              "ratePerUnit": "0.04"
+            }
+          ]
+        },
+        {
+          "lineNo": 3,
+          "productCode": "SPEND-AUTOMATION",
+          "productName": "Spend Automation — implementation",
+          "strategy": "MILESTONE",
+          "clause": "4.2",
+          "billingFrequency": "ON_MILESTONE",
+          "totalValue": "4000000.00",
+          "acceptanceWindowDays": 30,
+          "milestones": [
+            {
+              "code": "M1",
+              "name": "Project kickoff",
+              "percentage": "20",
+              "obligationId": "PO-114-01"
+            },
+            {
+              "code": "M2",
+              "name": "Design sign-off",
+              "percentage": "20",
+              "obligationId": "PO-114-02"
+            },
+            {
+              "code": "M3",
+              "name": "UAT sign-off",
+              "percentage": "30",
+              "obligationId": "PO-114-03"
+            },
+            {
+              "code": "M4",
+              "name": "Go-live",
+              "percentage": "30",
+              "obligationId": "PO-114-04"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "versionId": "A1",
+      "label": "Amendment A1",
+      "validFrom": "2026-07-16",
+      "validTo": null,
+      "source": {
+        "document": "CON-2026-114-A1.pdf",
+        "executedOn": "2026-07-14"
+      },
+      "amendmentOf": "V0",
+      "changes": [
+        {
+          "line": 1,
+          "field": "units",
+          "from": "500",
+          "to": "750"
+        },
+        {
+          "line": 1,
+          "field": "discountRate",
+          "from": "0",
+          "to": "0.08"
+        },
+        {
+          "line": 2,
+          "field": "includedUnitsPerMonth",
+          "from": "2000000",
+          "to": "3000000"
+        }
+      ],
+      "lines": [
+        {
+          "lineNo": 1,
+          "productCode": "BENEFITS-WALLET",
+          "productName": "Benefits Wallet",
+          "strategy": "SUBSCRIPTION_PER_UNIT",
+          "clause": "3.1 as amended by A1 §2",
+          "billingFrequency": "MONTHLY_IN_ADVANCE",
+          "units": 750,
+          "unitLabel": "active employee",
+          "ratePerUnitPerMonth": "1200.00",
+          "discountRate": "0.08"
+        },
+        {
+          "lineNo": 2,
+          "productCode": "CHANNEL-REWARDS",
+          "productName": "Channel Rewards",
+          "strategy": "USAGE_TIERED",
+          "clause": "3.4 as amended by A1 §3",
+          "billingFrequency": "MONTHLY_IN_ARREARS",
+          "usageMetric": "reward_transactions",
+          "includedUnitsPerMonth": 3000000,
+          "tierInterpretation": "TOTAL_VOLUME",
+          "tiers": [
+            {
+              "upTo": 1000000,
+              "ratePerUnit": "0.08"
+            },
+            {
+              "upTo": 5000000,
+              "ratePerUnit": "0.06"
+            },
+            {
+              "upTo": null,
+              "ratePerUnit": "0.04"
+            }
+          ]
+        },
+        {
+          "lineNo": 3,
+          "productCode": "SPEND-AUTOMATION",
+          "productName": "Spend Automation — implementation",
+          "strategy": "MILESTONE",
+          "clause": "4.2",
+          "billingFrequency": "ON_MILESTONE",
+          "totalValue": "4000000.00",
+          "acceptanceWindowDays": 30,
+          "milestones": [
+            {
+              "code": "M1",
+              "name": "Project kickoff",
+              "percentage": "20",
+              "obligationId": "PO-114-01"
+            },
+            {
+              "code": "M2",
+              "name": "Design sign-off",
+              "percentage": "20",
+              "obligationId": "PO-114-02"
+            },
+            {
+              "code": "M3",
+              "name": "UAT sign-off",
+              "percentage": "30",
+              "obligationId": "PO-114-03"
+            },
+            {
+              "code": "M4",
+              "name": "Go-live",
+              "percentage": "30",
+              "obligationId": "PO-114-04"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "tax": {
+    "regime": "GST_INDIA",
+    "intraState": [
+      {
+        "head": "CGST",
+        "rate": "0.09"
+      },
+      {
+        "head": "SGST",
+        "rate": "0.09"
+      }
+    ],
+    "interState": [
+      {
+        "head": "IGST",
+        "rate": "0.18"
+      }
+    ]
+  },
+  "additionalTerms": {
+    "renewalPolicy": {
+      "type": "AUTO_RENEW",
+      "noticeDays": 60,
+      "renewsOn": "2028-04-01",
+      "termMonths": 24,
+      "note": "Auto-renews for a further 24 months unless either party gives 60 days notice. Notice window opens 31 Jan 2028."
+    },
+    "oneTimeCharges": [
+      {
+        "code": "SETUP-ONBOARD",
+        "name": "Platform onboarding and data migration",
+        "strategy": "ONE_TIME",
+        "amount": "250000.00",
+        "clause": "5.1",
+        "status": "INVOICED",
+        "invoicedIn": "April 2026",
+        "note": "One-time charge, invoiced on activation. Outside the July billing period."
+      }
+    ]
+  }
+}

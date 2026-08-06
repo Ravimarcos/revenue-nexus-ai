@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Revenue Nexus AI — Current vs Future State Journey</title>
+<style>
+  :root{
+    --ink:#26251f; --ink-2:#55544c; --ink-3:#86857c;
+    --line:#e2e0d8; --line-2:#c9c7bd;
+    --surface:#faf9f5; --card:#ffffff;
+    --warn:#b4553b; --warn-bg:#fbf0ec;
+    --good:#4a7c59; --good-bg:#eef4ef;
+    --accent:#3d5a80; --accent-bg:#eef2f7;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:40px 24px 64px;background:var(--surface);color:var(--ink);
+       font:15px/1.55 ui-sans-serif,-apple-system,"Segoe UI",system-ui,sans-serif;
+       -webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto}
+  header{margin-bottom:36px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+  h1{margin:0 0 6px;font-size:26px;font-weight:600;letter-spacing:-.02em}
+  .sub{color:var(--ink-3);font-size:14px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  @media(max-width:900px){.grid{grid-template-columns:1fr}}
+  .col{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
+  .col h2{margin:0 0 4px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+  .col.now h2{color:var(--warn)}
+  .col.next h2{color:var(--good)}
+  .col .tag{font-size:13px;color:var(--ink-3);margin-bottom:20px}
+  .step{position:relative;padding:0 0 4px 30px;margin-bottom:14px}
+  .step:not(:last-child):before{content:"";position:absolute;left:9px;top:20px;bottom:-14px;
+    width:1px;background:var(--line-2)}
+  .dot{position:absolute;left:2px;top:4px;width:16px;height:16px;border-radius:50%;
+    background:var(--card);border:2px solid var(--line-2)}
+  .now .dot{border-color:#dcb3a6}
+  .next .dot{border-color:#a8c4b0}
+  .st{font-weight:600;font-size:14.5px;margin-bottom:2px}
+  .sd{font-size:13px;color:var(--ink-2);line-height:1.5}
+  .flag{display:inline-block;margin-top:6px;padding:3px 9px;border-radius:5px;
+    font-size:11.5px;font-weight:500;line-height:1.4}
+  .now .flag{background:var(--warn-bg);color:var(--warn)}
+  .next .flag{background:var(--good-bg);color:var(--good)}
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:34px 0 0}
+  @media(max-width:760px){.metrics{grid-template-columns:repeat(2,1fr)}}
+  .m{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+  .m .lbl{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:8px}
+  .m .row{display:flex;align-items:baseline;gap:9px}
+  .m .was{font-size:15px;color:var(--warn);text-decoration:line-through;opacity:.75}
+  .m .arw{color:var(--ink-3);font-size:12px}
+  .m .is{font-size:19px;font-weight:650;color:var(--good)}
+  .band{margin-top:34px;background:var(--accent-bg);border:1px solid #d3ddea;
+    border-radius:12px;padding:22px 24px}
+  .band h3{margin:0 0 12px;font-size:12px;font-weight:700;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--accent)}
+  .ai{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:760px){.ai{grid-template-columns:1fr}}
+  .ai ul{margin:0;padding-left:17px}
+  .ai li{font-size:13.5px;margin-bottom:6px;color:var(--ink-2)}
+  .ai b{color:var(--ink);font-weight:600}
+  .ai h4{margin:0 0 8px;font-size:13px;font-weight:650}
+  .note{margin-top:26px;font-size:13px;color:var(--ink-3);line-height:1.6;
+    padding-top:18px;border-top:1px solid var(--line)}
+  .note b{color:var(--ink-2)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Revenue Operations — Current vs Future State</h1>
+  <div class="sub">Revenue Nexus AI &middot; Contract CON-2026-114, Orient Electric Ltd &middot; July 2026 billing cycle</div>
+</header>
+
+<div class="grid">
+
+  <div class="col now">
+    <h2>Current state</h2>
+    <div class="tag">Nine stages. Five blind spots. One spreadsheet.</div>
+
+    <div class="step"><div class="dot"></div>
+      <div class="st">Sales negotiates</div>
+      <div class="sd">CRM records an amount, not a pricing structure.</div>
+      <div class="flag">Terms exist only in prose</div></div>
+
+    <div class="step"><div class="dot"></div>
+      <div class="st">Contract executed</div>
+      <div class="sd">Analyst reads the PDF and types terms into billing by hand.</div>
+      <div class="flag">Signed vs configured never compared</div></div>
+
+    <div class="step"><div class="dot"></div>
+      <div class="st">Implementation runs</div>
+      <div class="sd">UAT marked Done in Jira. A ₹12,00,000 event nobody sees.</div>
+      <div class="flag">Finance is not notified</div></div>
+
+    <div class="step"><div class="dot"></div>
+      <div class="st">Usage accumulates</div>
+      <div class="sd">Monthly total exported to CSV, emailed around the 3rd.</div>
+      <div class="flag">Granularity destroyed at source</div></div>
+
+    <div class="step"><div class="dot"></div>
+      <div class="st">Amendment signed</div>
+      <div class="sd">PDF attached to an email. The owner is on leave.</div>
+      <div class="flag">No workflow, no acknowledgement</div></div>
+
+    <div class="step"><div class="dot"></div>
+      <div class="st">Finance assembles</div>
+      <div class="sd">Four sources, one spreadsheet, three to five days.</div>
+      <div class="flag">Not reproducible or auditable</div></div>
+
+    <div class="step"><div class="dot"></div>
+      <div class="st">Invoice issued</div>
+      <div class="sd">Keyed in manually. IRN clock tracked on another tab.</div>
+      <div class="flag">If wrong, it is already immutable</div></div>
+
+    <div class="step"><div class="dot"></div>
+      <div class="st">Payment arrives short</div>
+      <div class="sd">TDS deduction recorded as PARTIALLY_PAID.</div>
+      <div class="flag">Phantom AR, unclaimed credits</div></div>
+
+    <div class="step"><div class="dot"></div>
+      <div class="st">Reconciliation</div>
+      <div class="sd">Quarterly, manual, incomplete. Small gaps written off.</div>
+      <div class="flag">Found late or not at all</div></div>
+  </div>
+
+  <div class="col next">
+    <h2>Future state</h2>
+    <div class="tag">Terms flow into pricing. The human approves rather than assembles.</div>
+
+    <div class="step"><div class="dot"></div>
+      <div class="st">Contract ingested</div>
+      <div class="sd">Terms extracted as PROPOSED, each linked to its source clause.</div>
+      <div class="flag">AI proposes &middot; human confirms</div></div>
+
+    <div class="step"><div class="dot"></div>
+      <div class="st">Pricing computed</div>
+      <div class="sd">Period split into rating segments at every amendment boundary.</div>
+      <div class="flag">Pure function &middot; reproducible forever</div></div>
+
+    <div class="step"><div class="dot"></div>
+      <div class="st">Usage ingested daily</div>
+      <div class="sd">Daily granularity enforced at the connector boundary.</div>
+      <div class="flag">Monthly aggregates rejected</div></div>
+
+    <div class="step"><div class="dot"></div>
+      <div class="st">Delivery linked</div>
+      <div class="sd">Jira sign-off becomes evidence against a performance obligation.</div>
+      <div class="flag">Arjun never leaves Jira</div></div>
+
+    <div class="step"><div class="dot"></div>
+      <div class="st">Rules evaluated</div>
+      <div class="sd">Six rules fire. One blocks, with a reason and a date.</div>
+      <div class="flag">A hold is a decision, not a silence</div></div>
+
+    <div class="step"><div class="dot"></div>
+      <div class="st">Recommendation produced</div>
+      <div class="sd">₹8,60,562.56 recommended &middot; ₹12,00,000 held until 13 Aug.</div>
+      <div class="flag">Naive rating would err by ₹1,16,477</div></div>
+
+    <div class="step"><div class="dot"></div>
+      <div class="st">Explanation on demand</div>
+      <div class="sd">Every rupee traces to rule, clause, and evidence.</div>
+      <div class="flag">Rendered from the trace, not generated</div></div>
+
+    <div class="step"><div class="dot"></div>
+      <div class="st">Finance approves</div>
+      <div class="sd">Meera decides. The billing system executes.</div>
+      <div class="flag">Judgement kept, retrieval removed</div></div>
+
+    <div class="step"><div class="dot"></div>
+      <div class="st">Payment settled</div>
+      <div class="sd">TDS recognised as a settlement component, not a shortfall.</div>
+      <div class="flag">No phantom receivable</div></div>
+  </div>
+</div>
+
+<div class="metrics">
+  <div class="m"><div class="lbl">Billing run</div>
+    <div class="row"><span class="was">3–5 days</span><span class="arw">→</span><span class="is">&lt; 1 day</span></div></div>
+  <div class="m"><div class="lbl">Explain an invoice</div>
+    <div class="row"><span class="was">3 days</span><span class="arw">→</span><span class="is">1 click</span></div></div>
+  <div class="m"><div class="lbl">Terms entry</div>
+    <div class="row"><span class="was">Manual</span><span class="arw">→</span><span class="is">Confirmed</span></div></div>
+  <div class="m"><div class="lbl">Reproducible</div>
+    <div class="row"><span class="was">Never</span><span class="arw">→</span><span class="is">Always</span></div></div>
+</div>
+
+<div class="band">
+  <h3>Where AI is used — and where it is deliberately excluded</h3>
+  <div class="ai">
+    <div>
+      <h4>AI adds value</h4>
+      <ul>
+        <li><b>Contract extraction</b> — unstructured prose into structure; regex fails on the second contract</li>
+        <li><b>Explanation</b> — turning a nested decision trace into language a controller can read</li>
+        <li><b>Entity resolution</b> — "Orient Electric" vs "OEL" vs "ORIENT ELEC LTD - BLR"</li>
+        <li><b>Anomaly narration</b> — hypothesising why two systems diverge</li>
+      </ul>
+    </div>
+    <div>
+      <h4>AI excluded by design</h4>
+      <ul>
+        <li><b>Computing any amount</b> — must be reproducible and defensible to an auditor</li>
+        <li><b>Deciding to block billing</b> — must be versioned and replayable</li>
+        <li><b>Resolving authority conflicts</b> — a written policy, not a runtime judgement</li>
+        <li><b>Confirming an extraction</b> — confidence never substitutes for human confirmation on money</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="note">
+  <b>The principle:</b> AI proposes, deterministic code disposes, and anything touching money is deterministic.<br>
+  <b>Figures on this page</b> are the output of <code>spikes/proration_spike.py</code>, not illustrations. Segmented rating produces ₹8,60,562.56; naive whole-period rating produces ₹9,77,040 — an error of ₹1,16,477 (13.5%) on a single contract for a single month.
+</div>
+
+</div>
+</body>
+</html>

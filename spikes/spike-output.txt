@@ -1,0 +1,80 @@
+==========================================================================
+SPIKE — CON-2026-114 · July 2026 · Amendment A1 effective 16 Jul
+==========================================================================
+
+Billing period 2026-07-01 .. 2026-07-31  (31 days)
+Total API calls in period: 2,400,000
+
+SEGMENTS
+--------------------------------------------------------------------------
+  Base terms     2026-07-01 .. 2026-07-15  15d  (0.483871 of period)  500 users, 0% disc
+  Amendment A1   2026-07-16 .. 2026-07-31  16d  (0.516129 of period)  750 users, 8% disc
+
+SUBSCRIPTION — segmented
+--------------------------------------------------------------------------
+  Base terms       ₹6,00,000.00 × 15/31  =   ₹2,90,322.58
+  Amendment A1     ₹8,28,000.00 × 16/31  =   ₹4,27,354.84
+  SEGMENTED TOTAL                             ₹7,17,677.42
+
+  Naive (new terms applied to whole period):  ₹8,28,000.00
+  Overstatement if we do NOT segment:        ₹1,10,322.58   (15.4%)
+
+USAGE — segmented, assuming uniform daily distribution
+--------------------------------------------------------------------------
+  Base terms     calls  1,161,290  allowance    967,742  overage   193,548  =   ₹11,612.88
+  Amendment A1   calls  1,238,710  allowance  1,548,387  overage         0  =        ₹0.00
+  SEGMENTED TOTAL                                                        ₹11,612.88
+
+  Naive (A1 allowance 3M over whole period): overage 0 → ₹0.00
+  Understatement if we do NOT segment:       ₹11,612.88
+
+TIER INTERPRETATION AMBIGUITY
+--------------------------------------------------------------------------
+  Segment 1 overage: 193,548 calls
+    (A) tier band chosen by TOTAL volume   (1,161,290 calls → ₹0.08 band) = ₹11,612.88
+    (B) tier band chosen by OVERAGE volume (193,548 calls → ₹0.08 band) = ₹15,483.84
+    divergence on identical contract text  = ₹3,870.96
+
+JULY 2026 INVOICE — segmented rating (correct)
+==========================================================================
+  Subscription (2 segments)              ₹7,17,677.42
+  API usage (2 segments)                   ₹11,612.88
+  Taxable subtotal                       ₹7,29,290.30
+  CGST @ 9%                                ₹65,636.13
+  SGST @ 9%                                ₹65,636.13
+  INVOICE TOTAL                          ₹8,60,562.56
+  Implementation milestone                       HELD
+    (UAT 30% of ₹40,00,000)             ₹12,00,000.00
+
+  Naive whole-period rating would invoice:  ₹9,77,040.00
+  Error:                                    ₹1,16,477.44
+
+==========================================================================
+VERDICT
+==========================================================================
+
+  The billing period CANNOT be rated as one unit.
+
+  F1  A billing period must be decomposed into RATING SEGMENTS at every
+      amendment boundary, each rated independently as a pure function.
+      "Rating period" != "billing period". Retrofitting this is a rewrite.
+
+  F2  Prorating a usage ALLOWANCE is not optional and not obvious. Naive
+      whole-period rating understated usage here because A1's larger 3M
+      allowance was wrongly applied to days it did not cover.
+
+  F3  Usage must be ingested at event or daily-bucket granularity. A monthly
+      aggregate ("2.4M calls in July") CANNOT be correctly rated across a
+      mid-cycle amendment. This is a hard ingestion requirement, not a
+      nice-to-have — and it constrains every usage connector we build.
+
+  F4  "Tiered pricing" is ambiguous in ordinary contract language. Bands may
+      be measured against total volume or against overage volume. The two
+      differ materially on identical contract text. The catalog must force
+      an explicit choice; it must never be inferred.
+
+  F5  Subscription billed in advance + mid-cycle amendment means the July
+      invoice was already issued on 1 July under base terms. Economically
+      the answer above is right, but mechanically it requires a CREDIT NOTE
+      plus a rebill, because issued invoices are immutable (INV-I1).
+

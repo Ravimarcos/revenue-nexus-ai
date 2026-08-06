@@ -1,0 +1,53 @@
+{
+  "_source": "CRM — account activity timeline",
+  "_account": "Vantara Electricals Ltd",
+  "_syncedAt": "2026-08-06T02:10:44+05:30",
+  "_note": "System of reference. The key account manager logs milestone confirmations where they already work. A logged sign-off is delivery evidence, NOT billing eligibility — the contract's acceptance window decides that.",
+  "activities": [
+    {
+      "activityId": "ACT-8814",
+      "type": "MILESTONE_SIGNOFF",
+      "summary": "Kickoff completed — mobilisation confirmed with client",
+      "status": "CONFIRMED",
+      "occurredAt": "2026-04-11T14:22:00+05:30",
+      "milestoneCode": "M1",
+      "obligationId": "PO-114-01",
+      "loggedBy": "Arjun Deshpande — Key Account Manager",
+      "url": "https://crm.example.com/activity/ACT-8814"
+    },
+    {
+      "activityId": "ACT-9021",
+      "type": "MILESTONE_SIGNOFF",
+      "summary": "Solution design signed off by client architecture team",
+      "status": "CONFIRMED",
+      "occurredAt": "2026-05-29T11:05:00+05:30",
+      "milestoneCode": "M2",
+      "obligationId": "PO-114-02",
+      "loggedBy": "Arjun Deshpande — Key Account Manager",
+      "url": "https://crm.example.com/activity/ACT-9021"
+    },
+    {
+      "activityId": "ACT-9337",
+      "type": "MILESTONE_SIGNOFF",
+      "summary": "UAT sign-off received from client — written confirmation on file",
+      "status": "CONFIRMED",
+      "occurredAt": "2026-07-14T16:32:00+05:30",
+      "milestoneCode": "M3",
+      "obligationId": "PO-114-03",
+      "loggedBy": "Arjun Deshpande — Key Account Manager",
+      "url": "https://crm.example.com/activity/ACT-9337",
+      "_note": "Logged 14 Jul. Contract clause 4.2 requires a 30-day acceptance window. Billable 13 Aug 2026 — not in the July run."
+    },
+    {
+      "activityId": "ACT-9502",
+      "type": "MILESTONE_IN_PROGRESS",
+      "summary": "Go-live scheduled — cutover plan under review",
+      "status": "OPEN",
+      "occurredAt": null,
+      "milestoneCode": "M4",
+      "obligationId": "PO-114-04",
+      "loggedBy": null,
+      "url": "https://crm.example.com/activity/ACT-9502"
+    }
+  ]
+}

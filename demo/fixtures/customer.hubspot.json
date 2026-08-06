@@ -1,0 +1,58 @@
+{
+  "_source": "HubSpot CRM",
+  "_syncedAt": "2026-08-05T23:04:11+05:30",
+  "_note": "System of reference. Mirrored read-only. We never write back.",
+  "company": {
+    "id": "hs-8841027",
+    "name": "Vantara Electricals Ltd",
+    "domain": "vantaraelectricals.in",
+    "industry": "Electrical Equipment Manufacturing",
+    "annualRevenueInr": 4180000000,
+    "employees": 2340,
+    "hqCity": "Bengaluru",
+    "ownerName": "Nikhil Raghavan",
+    "ownerEmail": "nikhil.r@example.com"
+  },
+  "billingEntities": [
+    {
+      "id": "BE-VAN-KA",
+      "legalName": "Vantara Electricals Ltd",
+      "gstin": "29AAFCV2841M1ZK",
+      "state": "Karnataka",
+      "stateCode": "29",
+      "address": "Plot 14, Peenya Industrial Area, Phase II, Bengaluru 560058",
+      "primary": true
+    },
+    {
+      "id": "BE-VAN-MH",
+      "legalName": "Vantara Electricals Ltd",
+      "gstin": "27AAFCV2841M1ZG",
+      "state": "Maharashtra",
+      "stateCode": "27",
+      "address": "Unit 7, MIDC Andheri, Mumbai 400093",
+      "primary": false
+    },
+    {
+      "id": "BE-VAN-HR",
+      "legalName": "Vantara Electricals Ltd",
+      "gstin": "06AAFCV2841M1ZQ",
+      "state": "Haryana",
+      "stateCode": "06",
+      "address": "Sector 34, Industrial Estate, Gurugram 122001",
+      "primary": false
+    }
+  ],
+  "contacts": [
+    { "name": "Meera Iyer", "title": "Financial Controller", "email": "meera.iyer@example.com", "primary": true },
+    { "name": "Arjun Deshpande", "title": "Head of Delivery", "email": "arjun.d@example.com", "primary": false },
+    { "name": "Priya Nair", "title": "Chief Financial Officer", "email": "priya.nair@example.com", "primary": false }
+  ],
+  "opportunity": {
+    "id": "hs-opp-449120",
+    "name": "Vantara Electricals — Platform + Implementation",
+    "stage": "closedwon",
+    "amountInr": 14000000,
+    "closeDate": "2026-03-24",
+    "_note": "The CRM records an amount. It records nothing about how that amount decomposes. This is exactly the gap."
+  }
+}
