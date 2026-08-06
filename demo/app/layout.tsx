@@ -11,15 +11,19 @@ const DESC =
  * sees before deciding whether to open it.
  */
 /**
- * Resolve the site URL from the environment rather than hardcoding it.
+ * The canonical, stable public URL.
  *
- * If this is wrong, the OG image URL 404s and the link preview silently
- * renders without an image — a failure you would never notice, because
- * nothing errors. Vercel sets VERCEL_URL automatically on every deployment.
+ * Deliberately NOT derived from VERCEL_URL. That variable resolves to the
+ * per-deployment hostname (revenue-nexus-abc123-....vercel.app), which
+ * changes on every deploy and — with Vercel's deployment protection enabled —
+ * redirects anonymous requests to a login page. The result is a link preview
+ * with a broken image, and nothing errors to tell you.
+ *
+ * The production alias is stable and public, so it is what the metadata must
+ * point at. Override with NEXT_PUBLIC_SITE_URL for a custom domain.
  */
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://revenue-nexus-ai.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
