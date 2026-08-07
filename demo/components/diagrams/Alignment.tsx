@@ -22,8 +22,13 @@ export function AlignmentDiagram() {
   const HUB_Y = 176;
   const width = X0 * 2 + SOURCES.length * W + (SOURCES.length - 1) * GAP;
 
+  // The "what it surfaces" row sits at HUB_Y + 94 and is 24 tall, so the
+  // canvas has to reach at least HUB_Y + 118. Hardcoding a shorter height
+  // silently clips the bottom edge of those boxes.
+  const height = HUB_Y + 128;
+
   return (
-    <svg viewBox={`0 0 ${width} 288`} className="w-full h-auto" role="img" aria-labelledby="alT alD">
+    <svg viewBox={`0 0 ${width} ${height}`} className="w-full h-auto" role="img" aria-labelledby="alT alD">
       <title id="alT">Five systems reconciled into one view</title>
       <desc id="alD">
         Contract, CRM, delivery, usage and billing each hold a piece of the same truth. The portal
