@@ -802,7 +802,7 @@ export default function Portal() {
 
         {/* ── Walkthrough ──────────────────────────────────────────────── */}
         <section>
-          <Eyebrow>The walkthrough · about 10 minutes</Eyebrow>
+          <Eyebrow>The walkthrough · about 6 minutes</Eyebrow>
           <div className="grid sm:grid-cols-2 gap-3 mt-3">
             {[
               ["/demo/contract", "2", "Client and contract", "Five pricing mechanisms composed, plus a mid-cycle amendment"],
